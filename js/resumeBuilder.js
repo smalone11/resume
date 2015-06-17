@@ -1,23 +1,27 @@
 // Biography and Header Info
 var bio = {
   "name": "Stephen Malone",
-  "role": "Web Developer",
-  "contact": ["805-390-1491", "smalone11@my.whitworth.edu", "https://github.com/smalone11",
-              "Thousand Oaks, CA"],
+  "role": " Web Developer",
+  "contacts": {
+    "mobile": "805-390-1491",
+    "email": "smalone11@my.whitworth.edu",
+    "github": "smalone11",
+    "location": "Thousand Oaks, CA"
+  },
   "picture": "images/me.jpg",
   "welcome": "Welcome to my page!",
-  "skills": ["awesome", " Python", " HTML", " CSS", " JS"]
+  "skills": ["Python", " HTML", " CSS", " JavaScript"]
 }
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contact[0]);
-var formattedEmail = HTMLemail.replace("%data%", bio.contact[1]);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contact[2]);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contact[3]);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedPic = HTMLbioPic.replace("%data%", bio.picture);
 var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
@@ -26,73 +30,103 @@ $("#header").append(formattedMobile);
 $("#header").append(formattedEmail);
 $("#header").append(formattedGithub);
 $("#header").append(formattedLocation);
-$("#header").append(formattedSkills);
 $("#header").append(formattedWelcome);
+
+if (bio.skills.length > 0) {
+  $("#header").append(HTMLskillsStart);
+  for (var i = 0; i < bio.skills.length; i++) {
+    formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+    $("#skills").append(formattedSkills);
+  }
+}
 
 // Work Experience
 var work = {
-  "present": [
-    {
-      "employer": "",
-      "title": "",
-      "dates": "",
-      "location": "",
-      "description": ""
-    }
-  ],
-  "past": [
+  "jobs": [
     {
       "employer": "Bank of America",
       "title": "Teller",
       "dates": "September 2014 - April 2015",
       "location": "Thousand Oaks, CA",
-      "description": "I was in charge of helping out customers with monetary related transactions and informing customers about products and services that we offered."
+      "description": "In charge of processing deposits, withdrawals, money orders, and payments for both personal and business accounts. Also sold to customers a variety of products."
     },
     {
-      "employer": "",
-      "title": "",
-      "dates": "",
-      "location": "",
-      "description": ""
+      "employer": "Tactical Marketing Concepts",
+      "title": "Account Representative Leader",
+      "dates": "June 2014 - July 2014",
+      "location": "Tacoma, WA",
+      "description": "My job was to go door-to-door and sell Century Link's services. I also was promoted to a Leader after 2 weeks on the job and helped to train new employees."
     },
     {
-      "employer": "",
-      "title": "",
-      "dates": "",
-      "location": "",
-      "description": ""
+      "employer": "Club Z! In-Home Tutoring Services",
+      "title": "Tutor",
+      "dates": "August 2012 - December 2012",
+      "location": "University Place, WA",
+      "description": "Tutored one student in Calculus and helped to raise their grade from a D to a B."
     },
     {
-      "employer": "",
-      "title": "",
-      "dates": "",
-      "location": "",
-      "description": ""
+      "employer": "Wells Fargo Bank",
+      "title": "Teller",
+      "dates": "August 2011 - May 2012",
+      "location": "Burien, WA",
+      "description": "In charge of processing deposits, withdrawals, money orders, and payments for both personal and business accounts. Also sold to customers a variety of products and was second in the district for the last quarter."
+    },
+    {
+      "employer": "Whitworth University Mathematics Department",
+      "title": "Grader",
+      "dates": "2009 - 2011",
+      "location": "Spokane, WA",
+      "description": "Graded homework assignments for Calculus 1 & 2 and Discrete Math and gave feedback to the students on problems missed."
+    },
+    {
+      "employer": "Whitworth University Summer Conferences",
+      "title": "Summer Conferences Assistant",
+      "dates": "May 2009 - August 2009",
+      "location": "Spokane, WA",
+      "description": "Worked with heads of specific conferences to plan and set up rooms and dorms needed for their event. In charge of filing and replacing any broken keys and keycards for campus dorms."
+    },
+    {
+      "employer": "Whitworth University Mathematics Department",
+      "title": "Tutor",
+      "dates": "2008 - 2009",
+      "location": "Spokane, WA",
+      "description": "Tutored for mainly Calculus 1 & 2 students."
+    },
+    {
+      "employer": "Best Buy",
+      "title": "Media Specialist",
+      "dates": "2005 - 2007",
+      "location": "Thousand Oaks, CA",
+      "description": "In charge of organizing and stocking shelves and customer service related tasks, such as helping customers find products and answering phone. Also was promoted to the head of the video game section and recognized for sales numbers in department."
     }
   ]
-
 }
 
-var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.past[0].title);
+work.display = function() {
+  for (job in work.jobs) {
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-$("#main").append(formattedWorkTitle);
+    $("#workExperience").append(HTMLworkStart);
+    $(".work-entry:last").append(formattedEmployerTitle);
+    $(".work-entry:last").append(formattedDates);
+    $(".work-entry:last").append(formattedLocation);
+    $(".work-entry:last").append(formattedDescription);
+  }
+}
 
 //Projects
 var project = {
-  "current": [
-    {
-      "title": "",
-      "dates": "",
-      "image": "",
-      "description": ""
-    }
-  ],
   "finished": [
     {
-      "title": "",
-      "dates": "",
-      "image": "",
-      "description": ""
+      "title": "Derp 1.0",
+      "dates": "Derpember 2014 - Derpuary 2015",
+      "image": "images/fry.jpg",
+      "description": "Derpity derp derp derp!"
     },
     {
       "title": "",
@@ -119,6 +153,21 @@ var project = {
       "description": ""
     }
   ]
+}
+
+project.display = function() {
+  for (proj in project.finished) {
+    var formattedTitle = HTMLprojectTitle.replace("%data%", project.finished[proj].title);
+    var formattedDates = HTMLprojectDates.replace("%data%", project.finished[proj].dates);
+    var formattedDescription = HTMLprojectDescription.replace("%data%", project.finished[proj].description);
+    var formattedImage = HTMLprojectImage.replace("%data%", project.finished[proj].image);
+
+    $("#projects").append(HTMLprojectStart);
+    $(".project-entry:last").append(formattedTitle);
+    $(".project-entry:last").append(formattedDates);
+    $(".project-entry:last").append(formattedDescription);
+    $(".project-entry:last").append(formattedImage);
+  }
 }
 
 //Education
@@ -126,17 +175,10 @@ var education = {
   "schools": [
     {
       "name": "Whitworth University",
-      "degree": "BS",
+      "degree": "Bachelors of Science, cum laude",
       "dates": 2011,
       "location": "Spokane, WA",
       "major": "Mathematics"
-    },
-    {
-      "name": "Udacity",
-      "degree": "Nanodegree",
-      "dates": 2015,
-      "location": "Online",
-      "major": "Front-End Web Developer"
     }
   ],
   "onlineCourses": [
@@ -179,8 +221,47 @@ var education = {
   ]
 }
 
-var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[0].name);
+education.display = function() {
+  for (college in education.schools) {
+    var formattedName = HTMLschoolName.replace("%data%", education.schools[college].name);
+    var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[college].degree);
+    var formattedNameDegree = formattedName + formattedDegree;
+    var formattedDates = HTMLschoolDates.replace("%data%", education.schools[college].dates);
+    var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[college].location);
+    var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[college].major);
 
-$("#main").append(formattedSchoolName);
+    $("#education").append(HTMLschoolStart);
+    $(".education-entry:last").append(formattedNameDegree);
+    $(".education-entry:last").append(formattedDates);
+    $(".education-entry:last").append(formattedLocation);
+    $(".education-entry:last").append(formattedMajor);
+  }
 
-//Contecting
+  $("#education").append(HTMLonlineClasses);
+
+  for (course in education.onlineCourses) {
+    var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+    var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+    var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+    var formattedTitleSchool = formattedURL + formattedTitle + formattedSchool;
+    var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+
+    $("#education").append(HTMLschoolStart);
+    $(".education-entry:last").append(formattedTitleSchool);
+    $(".education-entry:last").append(formattedDates);
+  }
+}
+
+
+//Display Everything
+work.display();
+project.display();
+education.display();
+
+//Location of Clicks
+$(document).click(function(loc) {
+  logClicks(loc.pageX, loc.pageY);
+});
+
+//Map time!
+//$("#mapDiv").append(googleMap);
