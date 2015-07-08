@@ -13,32 +13,41 @@ var bio = {
   "skills": ["Python", " HTML", " CSS", " JavaScript"]
 }
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedPic = HTMLbioPic.replace("%data%", bio.picture);
-var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
+bio.display = function() {
+  var formattedName = HTMLheaderName.replace("%data%", bio.name);
+  var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+  var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+  var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+  var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+  var formattedPic = HTMLbioPic.replace("%data%", bio.picture);
+  var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
+  var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#header").append(formattedPic);
-$("#header").append(formattedMobile);
-$("#header").append(formattedEmail);
-$("#header").append(formattedGithub);
-$("#header").append(formattedLocation);
-$("#header").append(formattedWelcome);
+  $("#header").prepend(formattedRole);
+  $("#header").prepend(formattedName);
+  $("#header").append(formattedPic);
+  $("#header").append(formattedWelcome);
+  $("#topContacts").append(formattedMobile);
+  $("#topContacts").append(formattedEmail);
+  $("#topContacts").append(formattedGithub);
+  $("#topContacts").append(formattedLocation);
 
-if (bio.skills.length > 0) {
-  $("#header").append(HTMLskillsStart);
-  for (var i = 0; i < bio.skills.length; i++) {
-    formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-    $("#skills").append(formattedSkills);
+  if (bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+    for (var i = 0; i < bio.skills.length; i++) {
+      formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+      $("#skills").append(formattedSkills);
+    }
   }
+
+  //Displays contanct info in footer
+  $("#footerContacts").append(formattedMobile);
+  $("#footerContacts").append(formattedEmail);
+  $("#footerContacts").append(formattedGithub);
+  $("#footerContacts").append(formattedLocation);
 }
+
 
 // Work Experience
 var work = {
@@ -123,34 +132,10 @@ work.display = function() {
 var project = {
   "finished": [
     {
-      "title": "Derp 1.0",
-      "dates": "Derpember 2014 - Derpuary 2015",
-      "image": "images/fry.jpg",
-      "description": "Derpity derp derp derp!"
-    },
-    {
-      "title": "",
-      "dates": "",
-      "image": "",
-      "description": ""
-    },
-    {
-      "title": "",
-      "dates": "",
-      "image": "",
-      "description": ""
-    },
-    {
-      "title": "",
-      "dates": "",
-      "image": "",
-      "description": ""
-    },
-    {
-      "title": "",
-      "dates": "",
-      "image": "",
-      "description": ""
+      "title": "Portfolio",
+      "dates": "June 2015",
+      "image": "images/portfolio.jpg",
+      "description": "A portfolio page using HTML and CSS that is responsive."
     }
   ]
 }
@@ -252,8 +237,8 @@ education.display = function() {
   }
 }
 
-
 //Display Everything
+bio.display();
 work.display();
 project.display();
 education.display();
@@ -262,3 +247,6 @@ education.display();
 $(document).click(function(loc) {
   logClicks(loc.pageX, loc.pageY);
 });
+
+//Add in Google Map
+$("#mapDiv").append(googleMap);
