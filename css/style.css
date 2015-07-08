@@ -4,10 +4,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.clearfix {
-  overflow: auto;
-}
-
 .education-entry, .work-entry, .project-entry {
   padding-left: 5%;
   padding-right: 5%;
@@ -17,7 +13,7 @@
 h1 {
   font-size: 40px;
   color: #F5A623;
-  line-height: 48px;
+  line-height: 40px;
   display: inline;
 }
 
@@ -91,7 +87,6 @@ a {
 
 #skillsH3 {
   color: #F5AE23;
-  display: none;
 }
 
 .orange {
@@ -176,22 +171,26 @@ span {
 
 @media only screen and (max-width: 1024px) {
   #letsConnect {
-    margin-top: 5%;
+    margin-top: 15px;
   }
 }
 
-@media only screen and (max-width:900px) {
+@media only screen and  (max-width: 947px) {
   .biopic {
-    width: 175px;
+    width: 100px;
+  }
+
+  #letsConnect {
+    margin-top: 25px;
   }
 }
 
 @media only screen and (max-width: 750px) {
   #letsConnect {
-    margin-top: 10%;
+    margin-top: 35px;
   }
   .biopic {
-    width: 150px;
+    width: 100px;
   }
   .welcome-message {
     display: none;
@@ -211,8 +210,7 @@ span {
   padding-bottom: 5%;
 }
 
-@media only screen and (min-width: 750px) {
-  #skillsH3,
+@media only screen and (min-width: 545px) {
   .biopic {
     display: block;
   }
