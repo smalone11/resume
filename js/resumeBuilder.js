@@ -10,7 +10,7 @@ var bio = {
   },
   "picture": "images/me.jpg",
   "welcome": "Welcome to my page!",
-  "skills": ["Python", " HTML", " CSS", " JavaScript"]
+  "skills": ["Python", " HTML", " CSS", " JavaScript", "jQuery"]
 }
 
 bio.display = function() {
@@ -135,20 +135,23 @@ var project = {
       "title": "Portfolio",
       "dates": "June 2015",
       "image": "images/portfolio.jpg",
-      "description": "A portfolio page using HTML and CSS that is responsive."
+      "description": "A portfolio page using HTML and CSS that is responsive.",
+      "url": "https://github.com/smalone11/project-1"
     }
   ]
 }
 
 project.display = function() {
   for (proj in project.finished) {
+    var formattedURL = HTMLprojectURL.replace("%data%", project.finished[proj].url);
     var formattedTitle = HTMLprojectTitle.replace("%data%", project.finished[proj].title);
     var formattedDates = HTMLprojectDates.replace("%data%", project.finished[proj].dates);
     var formattedDescription = HTMLprojectDescription.replace("%data%", project.finished[proj].description);
     var formattedImage = HTMLprojectImage.replace("%data%", project.finished[proj].image);
+    var formattedURLTitle = formattedURL + formattedTitle;
 
     $("#projects").append(HTMLprojectStart);
-    $(".project-entry:last").append(formattedTitle);
+    $(".project-entry:last").append(formattedURLTitle);
     $(".project-entry:last").append(formattedDates);
     $(".project-entry:last").append(formattedDescription);
     $(".project-entry:last").append(formattedImage);
@@ -202,6 +205,24 @@ var education = {
       "school": "Udacity",
       "dates": 2015,
       "url": "https://www.udacity.com/course/ud804-nd"
+    },
+    {
+      "title": "Intro to jQuery",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud245-nd"
+    },
+    {
+      "title": "Object-Oriented JavaScript",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud015-nd"
+    },
+    {
+      "title": "HTML5 Canvas",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud292-nd"
     }
   ]
 }
