@@ -132,36 +132,35 @@ work.display = function() {
 var project = {
   "finished": [
     {
-      "url:": "http://smalone11.github.io/portfolio/",
+      "url": "http://smalone11.github.io/portfolio/",
       "title": "Portfolio",
       "dates": "June 2015",
       "image": "images/portfolio.jpg",
-      "description": "A portfolio page using HTML and CSS that is responsive.",
-      "url": "https://github.com/smalone11/project-1"
+      "description": "A portfolio page using HTML and CSS that is responsive."
     },
     {
-      "url:": "http://smalone11.github.io/arcade-game/",
+      "url": "http://smalone11.github.io/arcade-game/",
       "title": "Arcade Game",
       "dates": "August 2015",
       "image": "images/arcade-game.jpg",
       "description": "A clone of the popular arcade game Frogger."
     },
     {
-      "url:": "http://smalone11.github.io/neighborhood-map/",
+      "url": "http://smalone11.github.io/neighborhood-map/",
       "title": "Neighborhood Map",
       "dates": "January 2016",
       "image": "images/neighborhood-map.jpg",
       "description": "A map that displays some of my favorite places around Seattle, WA."
     },
     {
-      "url:": "http://smalone11.github.io/feed-reader/",
+      "url": "http://smalone11.github.io/feed-reader/",
       "title": "Feed Reader Testing",
       "dates": "January 2016",
       "image": "images/feed-reader.png",
       "description": "A premade application that had tests added to it for its features."
     },
     {
-      "url:": "http://smalone11.github.io/website-optimization/",
+      "url": "http://smalone11.github.io/website-optimization/",
       "title": "Website Optimization",
       "dates": "February 2016",
       "image": "images/web-optimization.jpg",
