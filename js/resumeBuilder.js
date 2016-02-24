@@ -137,6 +137,30 @@ var project = {
       "image": "images/portfolio.jpg",
       "description": "A portfolio page using HTML and CSS that is responsive.",
       "url": "https://github.com/smalone11/project-1"
+    },
+    {
+      "title": "Arcade Game",
+      "dates": "August 2015",
+      "image": "images/arcade-game.jpg",
+      "description": "A clone of the popular arcade game Frogger."
+    },
+    {
+      "title": "Neighborhood Map",
+      "dates": "January 2016",
+      "image": "images/neighborhood-map.jpg",
+      "description": "A map that displays some of my favorite places around Seattle, WA."
+    },
+    {
+      "title": "Feed Reader Testing",
+      "dates": "January 2016",
+      "image": "images/feed-reader.png",
+      "description": "A premade application that had tests added to it for its features."
+    },
+    {
+      "title": "Website Optimization",
+      "dates": "February 2016",
+      "image": "images/web-optimization.jpg",
+      "description": "Optimized two websites to both load and run faster."
     }
   ]
 }
