@@ -4,21 +4,21 @@ var bio = {
   "role": " Web Developer",
   "contacts": {
     "mobile": "805-390-1491",
-    "email": "smalone11@my.whitworth.edu",
     "github": "smalone11",
+    "linkedin": "smalone11",
     "location": "Thousand Oaks, CA"
   },
   "picture": "images/me.jpg",
   "welcome": "Welcome to my page!",
-  "skills": ["Python", " HTML", " CSS", " JavaScript", "jQuery"]
+  "skills": ["Python", " HTML5", " CSS3", " JavaScript", "jQuery", "KnockoutJS", "Jasmine"]
 }
 
 bio.display = function() {
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
   var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
   var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+  var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
   var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
   var formattedPic = HTMLbioPic.replace("%data%", bio.picture);
   var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
@@ -29,8 +29,8 @@ bio.display = function() {
   $("#header").append(formattedPic);
   $("#header").append(formattedWelcome);
   $("#topContacts").append(formattedMobile);
-  $("#topContacts").append(formattedEmail);
   $("#topContacts").append(formattedGithub);
+  $("#topContacts").append(formattedLinkedin);
   $("#topContacts").append(formattedLocation);
 
   if (bio.skills.length > 0) {
@@ -43,8 +43,8 @@ bio.display = function() {
 
   //Displays contanct info in footer
   $("#footerContacts").append(formattedMobile);
-  $("#footerContacts").append(formattedEmail);
   $("#footerContacts").append(formattedGithub);
+  $("#footerContacts").append(formattedLinkedin);
   $("#footerContacts").append(formattedLocation);
 }
 
@@ -132,11 +132,40 @@ work.display = function() {
 var project = {
   "finished": [
     {
+      "url:": "http://smalone11.github.io/portfolio/",
       "title": "Portfolio",
       "dates": "June 2015",
       "image": "images/portfolio.jpg",
       "description": "A portfolio page using HTML and CSS that is responsive.",
       "url": "https://github.com/smalone11/project-1"
+    },
+    {
+      "url:": "http://smalone11.github.io/arcade-game/",
+      "title": "Arcade Game",
+      "dates": "August 2015",
+      "image": "images/arcade-game.jpg",
+      "description": "A clone of the popular arcade game Frogger."
+    },
+    {
+      "url:": "http://smalone11.github.io/neighborhood-map/",
+      "title": "Neighborhood Map",
+      "dates": "January 2016",
+      "image": "images/neighborhood-map.jpg",
+      "description": "A map that displays some of my favorite places around Seattle, WA."
+    },
+    {
+      "url:": "http://smalone11.github.io/feed-reader/",
+      "title": "Feed Reader Testing",
+      "dates": "January 2016",
+      "image": "images/feed-reader.png",
+      "description": "A premade application that had tests added to it for its features."
+    },
+    {
+      "url:": "http://smalone11.github.io/website-optimization/",
+      "title": "Website Optimization",
+      "dates": "February 2016",
+      "image": "images/web-optimization.jpg",
+      "description": "Optimized two websites to both load and run faster."
     }
   ]
 }
@@ -223,6 +252,36 @@ var education = {
       "school": "Udacity",
       "dates": 2015,
       "url": "https://www.udacity.com/course/ud292-nd"
+    },
+    {
+      "title": "Website Performance Optimization",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud884-nd"
+    },
+    {
+      "title": "Browser Rendering Optimization",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud860-nd"
+    },
+    {
+      "title": "Intro to AJAX",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud110-nd"
+    },
+    {
+      "title": "JavaScript Design Patterns",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud989-nd"
+    },
+    {
+      "title": "JavaScript Testing",
+      "school": "Udacity",
+      "dates": 2016,
+      "url": "https://www.udacity.com/course/ud549-nd"
     }
   ]
 }
