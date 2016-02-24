@@ -4,21 +4,21 @@ var bio = {
   "role": " Web Developer",
   "contacts": {
     "mobile": "805-390-1491",
-    "email": "smalone11@my.whitworth.edu",
     "github": "smalone11",
+    "linkedin": "smalone11",
     "location": "Thousand Oaks, CA"
   },
   "picture": "images/me.jpg",
   "welcome": "Welcome to my page!",
-  "skills": ["Python", " HTML", " CSS", " JavaScript", "jQuery"]
+  "skills": ["Python", " HTML5", " CSS3", " JavaScript", "jQuery", "KnockoutJS", "Jasmine"]
 }
 
 bio.display = function() {
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
   var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
   var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+  var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
   var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
   var formattedPic = HTMLbioPic.replace("%data%", bio.picture);
   var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
@@ -29,8 +29,8 @@ bio.display = function() {
   $("#header").append(formattedPic);
   $("#header").append(formattedWelcome);
   $("#topContacts").append(formattedMobile);
-  $("#topContacts").append(formattedEmail);
   $("#topContacts").append(formattedGithub);
+  $("#topContacts").append(formattedLinkedin);
   $("#topContacts").append(formattedLocation);
 
   if (bio.skills.length > 0) {
@@ -43,8 +43,8 @@ bio.display = function() {
 
   //Displays contanct info in footer
   $("#footerContacts").append(formattedMobile);
-  $("#footerContacts").append(formattedEmail);
   $("#footerContacts").append(formattedGithub);
+  $("#footerContacts").append(formattedLinkedin);
   $("#footerContacts").append(formattedLocation);
 }
 
