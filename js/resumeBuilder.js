@@ -223,6 +223,36 @@ var education = {
       "school": "Udacity",
       "dates": 2015,
       "url": "https://www.udacity.com/course/ud292-nd"
+    },
+    {
+      "title": "Website Performance Optimization",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud884-nd"
+    },
+    {
+      "title": "Browser Rendering Optimization",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud860-nd"
+    },
+    {
+      "title": "Intro to AJAX",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud110-nd"
+    },
+    {
+      "title": "JavaScript Design Patterns",
+      "school": "Udacity",
+      "dates": 2015,
+      "url": "https://www.udacity.com/course/ud989-nd"
+    },
+    {
+      "title": "JavaScript Testing",
+      "school": "Udacity",
+      "dates": 2016,
+      "url": "https://www.udacity.com/course/ud549-nd"
     }
   ]
 }
